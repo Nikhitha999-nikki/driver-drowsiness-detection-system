@@ -18,7 +18,7 @@ The Driver Drowsiness Detection System is a non-intrusive solution designed to m
 ## Setup Instructions
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<your-username>/Driver-Drowsiness-Detection-System.git
+   git clone https://github.com/Gagandeep-2003/Driver-Drowsiness-Detection-System.git
    cd Driver-Drowsiness-Detection-System
    ```
 2. **Install dependencies:**
