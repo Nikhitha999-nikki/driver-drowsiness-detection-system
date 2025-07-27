@@ -1,48 +1,50 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Nov 22 11:04:42 2019
-
-@author: Lenovo
-"""
-
 import tkinter as tk
-from tkinter import messagebox
-from tkinter.ttk import Style
-import subprocess    
+from tkinter import ttk, messagebox
+import subprocess
 
-def blink():
+face_proc = None  
+
+def run_face_detection():
+    global face_proc
     try:
-        subprocess.call(["python", "face-try.py"])
+        face_proc = subprocess.Popen(["python", "face-try.py"])
     except Exception as e:
-        messagebox.showerror("Error",f"Failed to run face detection:\n{e}")
-    
-def lane():
+        messagebox.showerror("Error", f"Failed to run face detection:\n{e}")
+
+
+def run_blink_detection():
     try:
         subprocess.call(["python", "blinkDetect.py"])
     except Exception as e:
-        messagebox.showerror("Error",f"Failed to run blink detection:\n{e}")
+        messagebox.showerror("Error", f"Failed to run blink detection:\n{e}")
 
-if __name__ == "__main__":
+def on_quit(root):
+    if face_proc and face_proc.poll() is None:
+        face_proc.terminate()
+    root.destroy()
+
+
+def main():
     root = tk.Tk()
-    root.geometry('500x500')
     root.title("Driver Drowsiness Detection System")
-    root.resizable(0, 0)
+    root.geometry("500x500")
 
-    root.configure(bg="#e8eef1")
+    style = ttk.Style()
+    style.configure('TButton', font=('Calibri', 20, 'bold'), borderwidth=2)
 
-    style = Style()
-    style.configure('TButton', font =('calibri', 18, 'bold'), borderwidth = '2')
+    frame = ttk.Frame(root, padding=20)
+    frame.pack(expand=True)
 
-    frame = tk.Frame(root,bg="#e8eef1")
-    frame.pack()
+    btn_face = ttk.Button(frame, text="Face Detection", command=run_face_detection)
+    btn_face.pack(side=tk.LEFT, padx=10, pady=10)
 
-    button1 = tk.Button(frame, text="Face Detection", fg="white", bg="#0078D7",activebackground="#005A9E", activeforeground="white", command=blink,relief="raised", bd=3, padx=10, pady=5)
-    button1.pack(side=tk.LEFT,padx=20,pady=10)
+    btn_blink = ttk.Button(frame, text="Blink Detection", command=run_blink_detection)
+    btn_blink.pack(side=tk.RIGHT, padx=10, pady=10)
 
-    button2 = tk.Button(frame, text="Blink Detection",fg="white", bg="#2D7D46",activebackground="#1B4F23", activeforeground="white",command=lane,relief="raised", bd=3, padx=10, pady=5)
-    button2.pack(side=tk.RIGHT,padx=20,pady=10)
-
-    button3 = tk.Button(frame, text="Quit", fg="white", bg="#E81123",activebackground="#A80000", activeforeground="white",command=root.destroy,relief="raised", bd=3, padx=10, pady=5)
-    button3.pack(side=tk.BOTTOM,pady=30)
+    btn_quit = ttk.Button(root, text="Quit", command=lambda: on_quit(root))
+    btn_quit.pack(side=tk.BOTTOM, pady=20)
 
     root.mainloop()
+
+if __name__ == "__main__":
+    main()
