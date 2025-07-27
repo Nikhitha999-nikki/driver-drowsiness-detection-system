@@ -22,7 +22,6 @@ def lane():
     except Exception as e:
         messagebox.showerror("Error",f"Failed to run blink detection:\n{e}")
 
-
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry('500x500')
