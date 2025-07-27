@@ -2,6 +2,8 @@
 
 Thanks for your interest in contributing! This guide will help you get started.
 
+🙏 **If you haven't already, please consider [starring the repository ⭐](https://github.com/Gagandeep-2003/Driver-Drowsiness-Detection-System)** to show your support and help others discover the project.
+
 ---
 
 ## 🛠️ Project Setup
