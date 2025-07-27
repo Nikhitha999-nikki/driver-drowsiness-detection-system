@@ -3,6 +3,16 @@
 ## Project Overview
 The Driver Drowsiness Detection System is a non-intrusive solution designed to monitor and detect signs of fatigue in drivers. By analyzing eye states through a camera feed, the system can identify early symptoms of drowsiness and issue timely warnings, helping to prevent accidents caused by driver fatigue. This project aims to enhance road safety, especially for those driving long distances who may not recognize their own drowsiness in time.
 
+## ⭐ Support the Project
+
+If you find this project helpful, please consider giving it a **star** ⭐ on GitHub!  
+It helps others discover the project and motivates us to keep improving it.
+
+👉 Click the ⭐ button at the top-right of this page!
+
+[![GitHub stars](https://img.shields.io/github/stars/Gagandeep-2003/Driver-Drowsiness-Detection-System.svg?style=social)](https://github.com/Gagandeep-2003/Driver-Drowsiness-Detection-System/stargazers)
+
+
 ## Key Features
 - Real-time monitoring of driver’s eyes using a camera
 - Fatigue and drowsiness detection algorithm
