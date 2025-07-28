@@ -1,4 +1,11 @@
-# Driver Drowsiness Detection System
+# Driver Drowsiness De## Key Features
+- Real-time monitoring of driver's eyes using a camera
+- Fatigue and drowsiness detection algorithm
+- Timely alerts to prevent the driver from falling asleep
+- Non-intrusive and easy to set up
+- **📱 Progressive Web App (PWA) support - Install like a native app!**
+- **🔄 Offline functionality with caching**
+- **🚀 Fast loading with optimized performance**on System
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/Gagandeep-2003/Driver-Drowsiness-Detection-System?style=social" alt="GitHub stars" />
@@ -92,16 +99,41 @@ This app version uses Streamlit + Mediapipe to detect drowsiness via webcam dire
 
 ### Usage:
 ```bash
+# Standard web app
 streamlit run streamlit_app/streamlit_app.py
+
+# Or run the enhanced PWA version
+streamlit run streamlit_app/streamlit_app_pwa.py
+```
+
+## 📱 Progressive Web App (PWA) Support
+
+**NEW!** This project now supports Progressive Web App functionality! Install it like a native app on your device.
+
+### PWA Features:
+- 📱 **Installable**: Add to home screen on mobile/desktop
+- 🚀 **Fast Loading**: Cached resources for better performance  
+- 🔄 **Offline Support**: Basic functionality without internet
+- 📲 **App-like Experience**: Full-screen, native app behavior
+
+### Quick PWA Installation:
+1. **Mobile**: Open in browser → Menu → "Add to Home Screen"
+2. **Desktop**: Look for install icon in address bar → Click "Install"
+
+📖 **[Complete PWA Guide](PWA_README.md)** - Detailed installation and usage instructions
 
 Dependencies:
 Install using:
+```bash
 pip install -r requirements.txt
+```
 
 Features:
-Real-time Eye Aspect Ratio (EAR) monitoring
-Drowsiness warning overlay
-Web-based UI with live video
+- Real-time Eye Aspect Ratio (EAR) monitoring
+- Drowsiness warning overlay
+- Web-based UI with live video
+- **PWA installable web app**
+- **Offline caching support**
 
 **Note:** Please do not add a license section. A contributor will be adding license information soon.
 
