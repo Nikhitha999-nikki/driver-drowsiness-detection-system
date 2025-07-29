@@ -49,12 +49,18 @@ def histogram_equalization(image):
     return cv2.equalizeHist(gray) 
 
 def soundAlert(path, threadStatusQ):
+    import traceback
     while True:
         if not threadStatusQ.empty():
             FINISHED = threadStatusQ.get()
             if FINISHED:
                 break
-        playsound.playsound(path)
+        try:
+            playsound.playsound(path)
+        except Exception as e:
+            print(f"Error playing sound: {e}")
+            traceback.print_exc()
+            break
 
 def eye_aspect_ratio(eye):
     A = dist.euclidean(eye[1], eye[5])
