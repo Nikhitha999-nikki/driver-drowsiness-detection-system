@@ -142,6 +142,9 @@ capture = cv2.VideoCapture(0)
 
 for i in range(10):
     ret, frame = capture.read()
+    if not capture.isOpened():
+        print("Error: Could not open webcam.")
+        sys.exit()
 
 totalTime = 0.0
 validFrames = 0
@@ -152,6 +155,10 @@ while(validFrames < dummyFrames):
     validFrames += 1
     t = time.time()
     ret, frame = capture.read()
+    if not ret or frame is None:
+        print("Error: Could not read frame from webcam.")
+        break 
+
     height, width = frame.shape[:2]
     IMAGE_RESIZE = np.float32(height)/RESIZE_HEIGHT
     frame = cv2.resize(frame, None, 
@@ -171,7 +178,7 @@ while(validFrames < dummyFrames):
         cv2.putText(frame, "or decrease FACE_DOWNSAMPLE_RATIO", (10, 50), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
         cv2.imshow("Blink Detection Demo", frame)
         if cv2.waitKey(1) & 0xFF == 27:
-            sys.exit()
+            break
 
     else:
         totalTime += timeLandmarks
