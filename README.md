@@ -93,6 +93,18 @@ We welcome contributions to improve this project! To get started:
 
 ---
 
+## 📋 Project Board & Roadmap
+
+We are actively tracking progress and assigning tasks for **GSSoC'25** in our GitHub Project Board.  
+You can see which issues are **To Do**, **In Progress**, or **Completed**, and pick one to start contributing.
+
+🚀 **[View the GSSoC 2025 Roadmap Project →](https://github.com/users/Gagandeep-2003/projects/1)**
+
+> ℹ️ To work on an issue:
+> 1. Comment on the issue stating your interest.
+> 2. We’ll assign it to you under the appropriate GSSoC’25 level.
+> 3. Track your progress via the Project Board.
+
 ## 🌐 Streamlit Web App (New Feature!)
 
 This app version uses Streamlit + Mediapipe to detect drowsiness via webcam directly in the browser.
